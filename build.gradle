@@ -19,6 +19,13 @@ repositories {
 	mavenCentral()
 }
 
+//subprojects {
+//	apply plugin: 'java'
+//	tasks.withType(Jar) {
+//		destinationDir = file("$rootDir/jar")
+//	}
+//}
+
 dependencies {
 	implementation 'org.springframework.kafka:spring-kafka'
 	implementation 'org.springframework.boot:spring-boot-starter-amqp'
