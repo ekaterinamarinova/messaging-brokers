@@ -1,4 +1,4 @@
-package com.producer.producers.producer;
+package com.messaging.producer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;

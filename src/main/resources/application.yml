@@ -1,0 +1,14 @@
+kafka:
+  bootstrapAddress: http://localhost:9092
+spring:
+  profiles:
+    active: rabbit
+
+logging:
+  level:
+    org: ERROR
+
+rabbit:
+  client:
+    duration: 10000
+

@@ -1,4 +1,4 @@
-package com.producer.producers.config;
+package com.messaging.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.WebApplicationInitializer;
