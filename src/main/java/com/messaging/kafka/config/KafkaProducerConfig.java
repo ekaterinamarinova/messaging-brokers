@@ -1,5 +1,6 @@
-package com.messaging.config.kafka;
+package com.messaging.kafka.config;
 
+import com.messaging.kafka.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -38,6 +39,14 @@ public class KafkaProducerConfig {
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
+    }
+
+    @Bean
+    public KafkaProducer producer(KafkaTemplate<String, String> kafkaTemplate) {
+        KafkaProducer kafkaProducer = new KafkaProducer(kafkaTemplate);
+        kafkaProducer.sendMessage("Hello world!");
+
+        return kafkaProducer;
     }
 
 }

@@ -1,14 +1,26 @@
 kafka:
   bootstrapAddress: http://localhost:9092
+
 spring:
   profiles:
-    active: rabbit
+    active: kafka
 
 logging:
   level:
-    org: ERROR
+    org: INFO
 
 rabbit:
   client:
-    duration: 10000
+    duration: 100
 
+srping:
+  artemis:
+    mode: native
+    host: localhost
+    port: 9876
+    user: admin
+    password: admin
+
+jms:
+  queue:
+    destination: hello.queue

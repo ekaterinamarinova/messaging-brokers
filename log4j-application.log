@@ -1,0 +1,2 @@
+2019-08-28 03:46:50 DEBUG RabbitProducer:31 - [X] Sent message: <Hello World!>
+2019-08-28 03:46:51 DEBUG RabbitConsumer:19 - Received: <Hello World!>
