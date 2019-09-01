@@ -1,17 +1,10 @@
-kafka:
-  bootstrapAddress: http://localhost:9092
-
 spring:
   profiles:
-    active: kafka
+    active: rabbit
 
 logging:
   level:
     org: INFO
-
-rabbit:
-  client:
-    duration: 100
 
 srping:
   artemis:
@@ -21,6 +14,7 @@ srping:
     user: admin
     password: admin
 
-jms:
-  queue:
-    destination: hello.queue
+rabbit-client-duration: 0
+artemis-broker-url: 0
+jms-queue-destination: hello.queue
+kafka-bootstrap-address: http://localhost:9092

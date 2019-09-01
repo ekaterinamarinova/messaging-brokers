@@ -1,8 +1,9 @@
 package com.messaging.artemis.config;
 
 import com.messaging.artemis.consumer.ArtemisConsumer;
+import com.messaging.config.ApplicationProperties;
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -14,16 +15,16 @@ import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 @Profile("artemis")
 public class ArtemisReceiverConfig {
 
-    @Value("${artemis.broker-url}")
-    private String brokerUrl;
+    @Autowired
+    private ApplicationProperties properties;
 
     @Bean
     public ActiveMQConnectionFactory receiverActiveMQConnectionFactory() {
-        return new ActiveMQConnectionFactory(brokerUrl);
+        return new ActiveMQConnectionFactory(properties.getArtemisBrokerUrl());
     }
 
     @Bean
-    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory() {
+    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory(ApplicationProperties properties) {
         DefaultJmsListenerContainerFactory factory =
                 new DefaultJmsListenerContainerFactory();
         factory

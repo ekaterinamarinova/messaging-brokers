@@ -1,2 +1,10 @@
 2019-08-28 03:46:50 DEBUG RabbitProducer:31 - [X] Sent message: <Hello World!>
 2019-08-28 03:46:51 DEBUG RabbitConsumer:19 - Received: <Hello World!>
+2019-08-31 18:25:18 DEBUG RabbitProducer:27 - [X] Sent message: <Message>
+2019-08-31 18:25:24 DEBUG RabbitConsumer:19 - Received: <Message>
+2019-08-31 18:30:30 DEBUG RabbitProducer:27 - [X] Sent message: <Message>
+2019-08-31 18:30:34 DEBUG RabbitConsumer:19 - Received: <Message>
+2019-08-31 18:47:28 DEBUG RabbitProducer:27 - [X] Sent message: <Message>
+2019-08-31 18:47:30 DEBUG RabbitConsumer:19 - Received: <Message>
+2019-09-01 16:55:26 DEBUG RabbitConsumer:25 - Received: <[112, 97, 121, 108, 111, 97, 100]>
+2019-09-01 16:56:36 DEBUG RabbitConsumer:25 - Received: <[123, 34, 112, 97, 121, 108, 111, 97, 100, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125]>
