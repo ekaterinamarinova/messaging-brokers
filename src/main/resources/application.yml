@@ -5,14 +5,4 @@ logging:
 srping:
   profiles:
     active: rabbit
-  artemis:
-    mode: native
-    host: localhost
-    port: 9876
-    user: admin
-    password: admin
 
-rabbit-client-duration: 0
-artemis-broker-url: 0
-jms-queue-destination: hello.queue
-kafka-bootstrap-address: http://localhost:9092

@@ -17,12 +17,17 @@ public class RabbitConsumer {
 
     private static final Logger LOGGER = Logger.getLogger(RabbitConsumer.class);
 
-    @Autowired
     private RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    public RabbitConsumer(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+    }
 
     @RabbitHandler
     public void receive(byte[] message) {
-        LOGGER.debug("Received: <" + Arrays.toString(message) + ">");
+        String msg = new String(message);
+        LOGGER.debug("Received: <" + msg + ">");
         rabbitTemplate.convertAndSend("my.exchange", message);
     }
 }

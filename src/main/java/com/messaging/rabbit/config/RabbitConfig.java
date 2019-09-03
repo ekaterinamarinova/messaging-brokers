@@ -28,8 +28,8 @@ public class RabbitConfig {
     }
 
     @Bean
-    public RabbitConsumer receiver() {
-        return new RabbitConsumer();
+    public RabbitConsumer receiver(RabbitTemplate rabbitTemplate) {
+        return new RabbitConsumer(rabbitTemplate);
     }
 
     @Bean

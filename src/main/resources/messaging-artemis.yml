@@ -1,0 +1,10 @@
+spring:
+  artemis:
+    mode: native
+    host: localhost
+    port: 9876
+    user: admin
+    password: admin
+
+artemis-broker-url: 0
+jms-queue-destination: hello.queue
