@@ -1,7 +1,6 @@
 package com.messaging.artemis.config;
 
 import com.messaging.artemis.ArtemisProperties;
-import com.messaging.artemis.producer.ArtemisProducer;
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,18 +13,21 @@ import org.springframework.jms.core.JmsTemplate;
 @Profile("artemis")
 public class ArtemisProducerConfig {
 
-    @Autowired
     private ArtemisProperties properties;
+
+    @Autowired
+    public ArtemisProducerConfig(ArtemisProperties properties) {
+        this.properties = properties;
+    }
 
     @Bean
     public ActiveMQConnectionFactory senderActiveMQConnectionFactory() {
-        return new ActiveMQConnectionFactory(properties.getArtemisBrokerUrl());
+        return new ActiveMQConnectionFactory("tcp://localhost:61616");
     }
 
     @Bean
     public CachingConnectionFactory cachingConnectionFactory() {
-        return new CachingConnectionFactory(
-                senderActiveMQConnectionFactory());
+        return new CachingConnectionFactory(senderActiveMQConnectionFactory());
     }
 
     @Bean
@@ -33,10 +35,4 @@ public class ArtemisProducerConfig {
         return new JmsTemplate(cachingConnectionFactory());
     }
 
-    @Bean
-    public ArtemisProducer sender() {
-        ArtemisProducer artemisProducer = new ArtemisProducer();
-        artemisProducer.send("Hello World!");
-        return artemisProducer;
-    }
 }

@@ -8,3 +8,25 @@
 2019-08-31 18:47:30 DEBUG RabbitConsumer:19 - Received: <Message>
 2019-09-01 16:55:26 DEBUG RabbitConsumer:25 - Received: <[112, 97, 121, 108, 111, 97, 100]>
 2019-09-01 16:56:36 DEBUG RabbitConsumer:25 - Received: <[123, 34, 112, 97, 121, 108, 111, 97, 100, 34, 58, 34, 115, 116, 114, 105, 110, 103, 34, 125]>
+2019-09-04 01:25:02 DEBUG RabbitConsumer:30 - Received: <iejlkfddslkjf>
+2019-09-04 01:25:31 DEBUG RabbitConsumer:30 - Received: <kakvo kaza>
+2019-09-04 01:26:32 DEBUG RabbitConsumer:30 - Received: <na baba ti gaza>
+2019-09-04 01:47:36 DEBUG KafkaConsumer:25 - Received: <some message one>
+2019-09-04 01:50:55 DEBUG KafkaConsumer:25 - Received: <some message one>
+2019-09-04 01:51:29 DEBUG KafkaConsumer:25 - Received: <some message two>
+2019-09-04 01:52:07 DEBUG KafkaConsumer:25 - Received: <some message one>
+2019-09-04 01:52:07 DEBUG KafkaConsumer:25 - Received: <some message two>
+2019-09-04 02:12:32 DEBUG ArtemisConsumer:16 - Received: <new message artemis hello
+
+
+
+>
+2019-09-04 02:14:34 DEBUG ArtemisConsumer:16 - Received: <new message
+
+
+
+>
+2019-09-04 02:14:52 DEBUG ArtemisConsumer:16 - Received: <hello world>
+2019-09-04 02:26:15 DEBUG ArtemisConsumer:29 - Received: <hello world>
+2019-09-04 02:28:40 DEBUG ArtemisConsumer:29 - Received: <hello world>
+2019-09-04 02:30:29 DEBUG ArtemisConsumer:29 - Received: <some message>

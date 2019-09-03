@@ -9,33 +9,36 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
+import org.springframework.jms.core.JmsTemplate;
 
 @Configuration
 @EnableJms
 @Profile("artemis")
 public class ArtemisReceiverConfig {
 
-    @Autowired
     private ArtemisProperties properties;
+
+    @Autowired
+    public ArtemisReceiverConfig(ArtemisProperties properties) {
+        this.properties = properties;
+    }
 
     @Bean
     public ActiveMQConnectionFactory receiverActiveMQConnectionFactory() {
-        return new ActiveMQConnectionFactory(properties.getArtemisBrokerUrl());
+        return new ActiveMQConnectionFactory("tcp://localhost:61616");
     }
 
     @Bean
     public DefaultJmsListenerContainerFactory jmsListenerContainerFactory(ArtemisProperties properties) {
-        DefaultJmsListenerContainerFactory factory =
-                new DefaultJmsListenerContainerFactory();
-        factory
-                .setConnectionFactory(receiverActiveMQConnectionFactory());
+        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+        factory.setConnectionFactory(receiverActiveMQConnectionFactory());
         factory.setConcurrency("3-10");
 
         return factory;
     }
 
     @Bean
-    public ArtemisConsumer receiver() {
-        return new ArtemisConsumer();
+    public ArtemisConsumer receiver(JmsTemplate jmsTemplate, ArtemisProperties artemisProperties) {
+        return new ArtemisConsumer(jmsTemplate, artemisProperties);
     }
 }

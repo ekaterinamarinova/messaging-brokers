@@ -5,6 +5,3 @@ srping:
 logging:
   level:
     org: INFO
-
-
-

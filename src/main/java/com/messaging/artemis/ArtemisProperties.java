@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "artemis")
 public class ArtemisProperties {
+
     private String artemisBrokerUrl;
 
     private String jmsDestinationQueue;

@@ -1,0 +1,14 @@
+spring:
+  profiles: artemis
+
+artemis:
+  broker.url: "tcp://localhost:61616"
+  mode: native
+  host: localhost
+  port: 9876
+  user: admin
+  password: admin
+
+jms:
+  queue:
+    destination: artemis.test1
