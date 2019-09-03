@@ -1,8 +1,10 @@
+srping:
+  profiles:
+    active: rabbit
+
 logging:
   level:
     org: INFO
 
-srping:
-  profiles:
-    active: rabbit
+
 

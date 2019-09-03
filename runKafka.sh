@@ -2,6 +2,6 @@
 
 gradle bootJar
 
-jarVar=build/libs/producers-0.0.1-SNAPSHOT.jar
+jarVar=build/libs/messaging-0.0.1.jar
 
-java -jar -Dspring.profiles.active=kafka ${jarVar} #producers-0.0.1-SNAPSHOT.jar
+java -jar -Dspring.profiles.active=kafka ${jarVar} #messaging-0.0.1.jar

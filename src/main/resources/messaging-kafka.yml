@@ -1,3 +1,5 @@
+spring:
+  profiles: kafka
 kafka:
   brokerUrl: localhost:9093
   clientId: OMS_CARRIER_STATUS

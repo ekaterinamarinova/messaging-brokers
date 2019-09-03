@@ -16,13 +16,14 @@ import org.springframework.context.annotation.Profile;
 @Profile("rabbit")
 public class RabbitConfig {
 
+    private static final String QUEUE_NAME = "my.queue";
+
     @Bean
     public SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
                                                     MessageListenerAdapter listenerAdapter) {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
-        container.setQueueNames("my.queue");
-        container.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+        container.setQueueNames(QUEUE_NAME);
         container.setMessageListener(listenerAdapter);
         return container;
     }
@@ -38,8 +39,8 @@ public class RabbitConfig {
     }
 
     @Bean
-    public MessageConverter jsonMessageConverter(){
-        return new Jackson2JsonMessageConverter();
+    public Queue hello() {
+        return new Queue(QUEUE_NAME);
     }
 
 }

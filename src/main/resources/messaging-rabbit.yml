@@ -1,3 +1,6 @@
+spring:
+  profiles: rabbit
+
 rabbit:
   client:
     duration: 0
