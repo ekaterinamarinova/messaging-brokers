@@ -1,7 +1,7 @@
 package com.messaging.artemis.config;
 
+import com.messaging.artemis.ArtemisProperties;
 import com.messaging.artemis.consumer.ArtemisConsumer;
-import com.messaging.config.ApplicationProperties;
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,7 +16,7 @@ import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
 public class ArtemisReceiverConfig {
 
     @Autowired
-    private ApplicationProperties properties;
+    private ArtemisProperties properties;
 
     @Bean
     public ActiveMQConnectionFactory receiverActiveMQConnectionFactory() {
@@ -24,7 +24,7 @@ public class ArtemisReceiverConfig {
     }
 
     @Bean
-    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory(ApplicationProperties properties) {
+    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory(ArtemisProperties properties) {
         DefaultJmsListenerContainerFactory factory =
                 new DefaultJmsListenerContainerFactory();
         factory

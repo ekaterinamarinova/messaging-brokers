@@ -1,6 +1,6 @@
 package com.messaging.artemis.producer;
 
-import com.messaging.config.ApplicationProperties;
+import com.messaging.artemis.ArtemisProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jms.core.JmsTemplate;
@@ -13,7 +13,7 @@ public class ArtemisProducer {
     private JmsTemplate jmsTemplate;
 
     @Autowired
-    private ApplicationProperties properties;
+    private ArtemisProperties properties;
 
     public void send(String msg){
         jmsTemplate.convertAndSend(properties.getJmsDestinationQueue(), msg);

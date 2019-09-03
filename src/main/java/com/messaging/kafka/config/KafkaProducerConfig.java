@@ -1,10 +1,9 @@
 package com.messaging.kafka.config;
 
-import com.messaging.config.ApplicationProperties;
+import com.messaging.kafka.KafkaProperties;
 import com.messaging.kafka.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -19,14 +18,14 @@ import java.util.Map;
 @Profile("kafka")
 public class KafkaProducerConfig {
 
-    private ApplicationProperties properties;
+    private KafkaProperties properties;
 
     @Bean
     public ProducerFactory<String, String> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(
                 ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                properties.getKafkaBootstrapAddress());
+                properties.getBrokerUrl());
         configProps.put(
                 ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                 StringSerializer.class);

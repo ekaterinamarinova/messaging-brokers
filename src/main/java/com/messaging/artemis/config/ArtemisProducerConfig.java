@@ -1,7 +1,7 @@
 package com.messaging.artemis.config;
 
+import com.messaging.artemis.ArtemisProperties;
 import com.messaging.artemis.producer.ArtemisProducer;
-import com.messaging.config.ApplicationProperties;
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +15,7 @@ import org.springframework.jms.core.JmsTemplate;
 public class ArtemisProducerConfig {
 
     @Autowired
-    private ApplicationProperties properties;
+    private ArtemisProperties properties;
 
     @Bean
     public ActiveMQConnectionFactory senderActiveMQConnectionFactory() {
