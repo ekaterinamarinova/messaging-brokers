@@ -1,5 +1,5 @@
-# producers
-## Producers and configurations of different messaging platforms
+# MESSAGING
+## Configurations of different messaging platforms
 
 ### In order to start the application you need to do the following:
 

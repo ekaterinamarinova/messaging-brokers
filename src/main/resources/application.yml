@@ -1,12 +1,10 @@
-spring:
-  profiles:
-    active: rabbit
-
 logging:
   level:
     org: INFO
 
 srping:
+  profiles:
+    active: rabbit
   artemis:
     mode: native
     host: localhost

@@ -22,7 +22,7 @@ public class RabbitConfig {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
         container.setQueueNames("my.queue");
-//        container.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+        container.setAcknowledgeMode(AcknowledgeMode.MANUAL);
         container.setMessageListener(listenerAdapter);
         return container;
     }
