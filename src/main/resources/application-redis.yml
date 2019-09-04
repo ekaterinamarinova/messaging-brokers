@@ -1,0 +1,6 @@
+spring:
+  profiles: reddis
+
+redis:
+  channelName: chat1
+  channelName2: chat2

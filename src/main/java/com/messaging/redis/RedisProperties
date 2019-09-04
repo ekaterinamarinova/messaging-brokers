@@ -1,0 +1,29 @@
+package com.messaging.redis;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties(prefix = "redis")
+public class RedisProperties {
+
+    private String channelName;
+
+    private String channelName2;
+
+    public String getChannelName() {
+        return channelName;
+    }
+
+    public void setChannelName(String channelName) {
+        this.channelName = channelName;
+    }
+
+    public String getChannelName2() {
+        return channelName2;
+    }
+
+    public void setChannelName2(String channelName2) {
+        this.channelName2 = channelName2;
+    }
+}
